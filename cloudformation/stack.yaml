@@ -47,15 +47,15 @@ Resources:
     Properties:
       EIP: !Ref EIP
       InstanceId: !Ref Instance
-Record:
-    Type: AWS::Route53::RecordSet
-    Properties:
-      HostedZoneId: !Ref HostedZoneId
-      Name: !Ref DomainName
-      Type: A
-      TTL: "60"
-      ResourceRecords:
-        - !Ref EIP
+  Record:
+      Type: AWS::Route53::RecordSet
+      Properties:
+        HostedZoneId: !Ref HostedZoneId
+        Name: !Ref DomainName
+        Type: A
+        TTL: "60"
+        ResourceRecords:
+          - !Ref EIP
 Outputs:
   InstanceId:
     Description: EC2 Instance Id
